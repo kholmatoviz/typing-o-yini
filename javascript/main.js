@@ -10,16 +10,16 @@ const modalScore = document.querySelector(".modal-score");
 const modalBtn = document.querySelector(".modal-btn");
 const recordScore = document.querySelector(".modal-record");
 
-let time = 10;
-let count = 10;
+let time = 5;
+let count = 5;
 
 selectEl.addEventListener("change", () => {
   if (selectEl.value === "qiyin") {
-    count = 5;
-  } else if (selectEl.value === "oson") {
-    count = 10;
-  } else if (selectEl.value === "murakkab") {
     count = 3;
+  } else if (selectEl.value === "oson") {
+    count = 5;
+  } else if (selectEl.value === "murakkab") {
+    count = 2;
   }
 });
 
@@ -68,7 +68,7 @@ const decretime = () => {
       if (score > localStorage.getItem("record")) {
         localStorage.setItem("record", score);
       }
-      recordScore.textContent = localStorage.getItem("record") || 0;
+      recordScore.textContent = localStorage.getItem("record");
       clearInterval(timeInterval);
     }
   }, 1000);
@@ -80,7 +80,7 @@ decretime()
 // restart game;
 
 modalBtn.addEventListener("click", () => {
-  time = 10;
+  time = 5;
   score = 0;
   result.textContent = 0;
   timeEl[1].textContent = time.toString().padStart(2, "0");
