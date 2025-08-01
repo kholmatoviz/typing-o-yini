@@ -48,8 +48,6 @@ input.addEventListener("input", () => {
   }
 });
 
-// decretime
-
 const decretime = () => {
   const timeInterval = setInterval(function () {
     time--;
@@ -64,7 +62,6 @@ const decretime = () => {
     if (time === 0) {
       overlayEl.style.display = "flex";
       modalScore.textContent = score;
-      // save this max score to localStorage
       if (score > localStorage.getItem("record")) {
         localStorage.setItem("record", score);
       }
@@ -86,6 +83,9 @@ modalBtn.addEventListener("click", () => {
   timeEl[1].textContent = time.toString().padStart(2, "0");
   randomNumber = Math.floor(Math.random() * words.length);
   randomtext.textContent = words[randomNumber];
+  input.classList.remove("error");
+  input.setAttribute("placeholder", "So'zni yozing...");
+
   decretime()
   overlayEl.style.display = "none";
   input.value = "";
