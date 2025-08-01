@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <select>
+            <option value="oson">Oson</option>
+            <option value="qiyin">Qiyin</option>
+            <option value="murakkab">Murakkab</option>
+        </select>
+        <h1 class="title">Typing O'yini</h1>
+        <span class="randomtext"></span>
+        <input type="text" class="input" placeholder="So'zni yozing..." autocomplete="off" autofocus />
+        <h2>Natija:<span class="result"> 0</span></h2>
+        <h2>
+            Vaqti:
+            <div class="time"><span>00</span>:<span>00</span></div>
+        </h2>
+    </div>
+
+    <div class="overlay">
+        <div class="modal">
+            <h2 class="modal-title">
+                <span>Sizning Natijangiz:</span>
+                <span class="modal-score">0</span>
+            </h2>
+            <p>
+                <span>Rekord:</span>
+                <span class="modal-record">0</span>
+            </p>
+            <button class="modal-btn">Qaytadan boshlash</button>
+        </div>
+    </div>
+
+
+    <script type="module" src="./javascript/main.js"></script>
+</body>
+
+</html>
